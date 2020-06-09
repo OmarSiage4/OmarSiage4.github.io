@@ -1,0 +1,113 @@
+body{
+  display: block;
+  padding-bottom: 0;
+  height: 100vh;
+  margin: 0;
+}
+
+#background-image{
+  background-image: url("../img/mainBack.jpg");
+  height: 84vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+nav{
+  height: 8vh !important;
+  font-size: 20px !important;
+}
+
+
+footer{
+  height: 8vh;
+  background-color: #343a40!important;
+  line-height: 5vh;
+  text-align: center;
+  color: white;
+  font-style: oblique;
+
+
+}
+
+/* This will allow me to center the button in the middle */
+#start-shopping{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 84vh;
+}
+
+
+/*This will be used to style the botton itself*/
+#button-shopping{
+  height: 15vh;
+  width: 20vh;
+
+  background-color: #343a40;
+  color: white;
+  font-weight: 100;
+  font-size: 30px;
+  font-style: oblique;
+  border:2px groove black;
+  border-radius: 5px;
+}
+
+
+#button-shopping:hover{
+  background-color:lightgreen;
+  color: black;  
+}
+
+
+/*  STYLE FOR THE CLIENT */
+#clientBody{
+  display: flex;
+  height: 84vh;
+  background-color: lightpink;
+}
+
+
+
+#clientInfoForm{
+  background-color: pink;
+  width: 25%;
+  margin: auto auto;
+
+  min-height: 450px;
+  max-height: 550px;
+  border: 1px solid black;
+  border-radius: 4px;
+  min-width: 375px;
+  height: 25vh;
+  padding: 20px;
+  text-align: center;
+}
+
+#personalInfo{
+  border: 1px solid black;
+  width: 85%;
+  margin: auto;
+  margin-top: 45px;
+  padding: 20px;
+
+  font-family: 'Courier New', Courier, monospace;
+}
+
+#customerInfo{
+  font-weight: 700;
+}
+
+#submitButton{
+  padding: 5px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  background-color: gray;
+  color:white;
+}
+
+
+#submitButton:hover{
+  background-color: black;
+}
