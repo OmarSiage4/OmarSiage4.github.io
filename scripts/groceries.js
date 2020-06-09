@@ -1,3 +1,5 @@
+let allSelectedItems = [];
+
 var customerType = localStorage.getItem("categoryType");
 var organicOnly = localStorage.getItem("organicSelected");
 var priceSorting = localStorage.getItem("priceSortingSelected");
@@ -14,7 +16,8 @@ var products = [
 		glutenFree: true,
 		price: 1.99,
 		url : "https://img.icons8.com/color/48/000000/brocolini.png",
-		organic:true
+		organic:true,
+		category:"veggyandfruit"
 	},
 	{
 		name: "Bread",
@@ -22,7 +25,8 @@ var products = [
 		glutenFree: false,
 		price: 2.35,
 		url : "https://img.icons8.com/doodle/48/000000/bread--v1.png",
-		organic:false
+		organic:false,
+		category:"bakery"
 	},
 	{
 		name: "Salmon",
@@ -30,7 +34,8 @@ var products = [
 		glutenFree: true,
 		price: 10.99,
 		url : "https://img.icons8.com/cotton/48/000000/salmon--v1.png",
-		organic: false
+		organic: false,
+		category: "dairyandmeat"
 	},
 	{
 		name: "Cashews",
@@ -38,7 +43,8 @@ var products = [
 		glutenFree: true,
 		price: 5.65,
 		url : "https://img.icons8.com/office/48/000000/brazil-nut.png",
-		organic: true
+		organic: true,
+		category:"snacks"
 	},
 	{
 		name: "Curry",
@@ -46,7 +52,8 @@ var products = [
 		glutenFree: true,
 		price: 6.99,
 		url : "https://img.icons8.com/color/48/000000/curry.png",
-		organic: false
+		organic: false,
+		category:"spices"
 	},
 	{
 		name: "Chicken",
@@ -54,7 +61,8 @@ var products = [
 		glutenFree: true,
 		price: 12.89,
 		url : "https://img.icons8.com/office/48/000000/chicken.png",
-		organic: true
+		organic: true,
+		category: "dairyandmeat"
 	},
 	{
 		name: "Beef",
@@ -62,7 +70,9 @@ var products = [
 		glutenFree: true,
 		price: 10.29,
 		url : "https://img.icons8.com/cotton/48/000000/steak-medium--v1.png",
-		organic: true
+		organic: true,
+		category: "dairyandmeat"
+
 	},
 	{
 		name: "Cake",
@@ -70,14 +80,18 @@ var products = [
 		glutenFree: false,
 		price: 12.99,
 		url : "https://img.icons8.com/pastel-glyph/48/000000/double-chocolate-cake.png",
-		organic: false
+		organic: false,
+		category:"bakery"
+
 	},	{
 		name: "Cookie",
 		vegetarian: true,
 		glutenFree: false,
 		price: 1.99,
 		url : "https://img.icons8.com/plasticine/48/000000/cookie.png",
-		organic: false
+		organic: false,
+		category:"bakery"
+
 	},
 	{
 		name: "Asparagus",
@@ -85,14 +99,71 @@ var products = [
 		glutenFree: true,
 		price: 2.99,
 		url : "https://img.icons8.com/color/48/000000/asparagus.png",
-		organic: true
+		organic: true,
+		category:"veggyandfruit"
+
 	}
 ];
 
 
 
+function getOrganic(){
+	var org = localStorage.getItem("organicSelected");
+	if(org == "false"){
+		org=false
+	}
+	else{
+		org=true
+	}
 
-function restrictListProducts(restriction,organicOnly) {
+	return org;
+}
+
+
+
+
+function displayCategory(categoryType){
+	console.log(categoryType);
+
+	getCurrentSelected = selectedItems();
+
+	if(getCurrentSelected != null){
+		for(var i=0 ; i < getCurrentSelected.length ; i+=1){
+			allSelectedItems.push(getCurrentSelected[i]);
+		}
+
+		console.log(allSelectedItems);
+		
+
+
+	var organic = getOrganic()
+	var productList = restrictListProducts(organic);
+
+	//Get only those of the same category type
+	productList = getCategories(productList,categoryType);
+
+	displayProducts(productList)
+
+}
+}
+
+
+function getCategories(productList,categoryType){
+	let categoryList = [];
+
+	for(var i=0 ; i<productList.length; i+=1){
+		if(productList[i].category == categoryType){
+			categoryList.push(productList[i]);
+		}
+
+	}
+
+	return categoryList;
+
+
+}
+
+function restrictListProducts(organicOnly) {
 	let newly_selected_products = [];
 
 
@@ -105,7 +176,6 @@ function restrictListProducts(restriction,organicOnly) {
 			}
 
 			else if(organicOnly == false){
-				console.log(organicOnly);
 				newly_selected_products.push(products[i]);
 			}
 		}
@@ -160,6 +230,12 @@ function restrictListProducts(restriction,organicOnly) {
 
 
 function displayProducts(productList){
+
+	if(priceSorting === "true"){
+		productList = sortCost(productList);
+	}
+	
+	
 	let div = document.getElementById("productList");
 	console.log(div)
 	div.innerHTML = " "; 
@@ -241,11 +317,24 @@ function selectedItems(){
 			chosenProducts.push(itemArray);
 		}
 	}
-		
-	//I want to save it to local storage to be fetched later!
-	console.log(chosenProducts)
-	localStorage.setItem("bought",chosenProducts);
-		
+	return chosenProducts;
+	//I want to save it to local storage to be fetched later!		
+}
+
+
+function checkout(){
+	getCurrentSelected = selectedItems();
+
+	if(getCurrentSelected != null){
+		for(var i=0 ; i < getCurrentSelected.length ; i+=1){
+			allSelectedItems.push(getCurrentSelected[i]);
+		}
+
+		console.log(allSelectedItems);
+	}
+
+
+	localStorage.setItem("bought",allSelectedItems);
 }
 
 

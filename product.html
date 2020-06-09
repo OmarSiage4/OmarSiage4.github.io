@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles/style.css">
+    <link rel="stylesheet" href="./styles/product.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
     <title>Freshmo</title>
 </head>
 
@@ -12,39 +15,68 @@
     
 
 
+
+
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark" id="navbar">
-        <a class="navbar-brand" href="index.html">Freshmo<img src="https://img.icons8.com/color/48/000000/grocery-bag.png"/></a>
+        <a class="navbar-brand" href="index.html">Freshmo 2.0<img src="https://img.icons8.com/color/48/000000/grocery-bag.png"/></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse ml-3" id="navbarNav">
-          <ul class="navbar-nav">
-            <li class="nav-item ">
-              <a class="nav-link" href="index.html"> Home <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item ">
-              <a class="nav-link" href="client.html"> Client <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="product.html"> Products </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="cart.html"> Cart </a>
-            </li>
-          </ul>
-        </div>
       </nav>
 
+
+      
+      <h1>
+        Select Your Cetegory. Select Your Items. Checkout!
+      </h1>
+
+      
+
+      <div class="progress">
+        <ul>
+                  
+          <li>
+            <img src="https://img.icons8.com/pastel-glyph/64/000000/person-male.png"/>                  
+            <p>Personal Information</p>
+            <i class="fa fa-refresh" aria-hidden="true"></i>
+          </li>
+    
+          <li>
+            <img src="https://img.icons8.com/fluent/48/000000/shop.png"/>
+            <p>Shopping</p>
+            <i class="fa fa-times-circle fa-lg" aria-hidden="true"></i>
+          </li>
+    
+          <li>
+            <img src="https://img.icons8.com/pastel-glyph/64/000000/shopping-cart--v2.png"/>
+            <p>Cart</p>
+            <i class="fa fa-times-circle fa-lg" aria-hidden="true"></i>
+          </li>
+        </ul>
+
+    </div>
+
+    
+    <div class="nav-buttons">
+      <a href="client.html"><button>Previous</button></a>
+      <a href="cart.html"><button onclick="checkout()">Checkout</button></a>
+    </div>
 
       <div id="productList">
 
       </div>
       
-    <div style="width: 100%; display: flex;">
-      <a style="text-align: center; margin: auto;" href="cart.html"><button onclick="selectedItems()">
-          Checkout! 
-      </button></a>
-    </div>
+      
+      <div class="cetegories">
+        <div id="veggyandfruit" onclick="displayCategory('veggyandfruit')">Veggies & Fruits</div>
+        <div id="bakery" onclick="displayCategory('bakery')">Bakery</div>
+        <div id="dairyandmeat" onclick="displayCategory('dairyandmeat')">Dairy & Meat</div>
+        <div id="snacks" onclick="displayCategory('snacks')">Snacks</div>
+        <div id="spices" onclick="displayCategory('spices')">Spices</div>
+      </div>
+
+
+
 
     <script src="./scripts/groceries.js"></script>
 

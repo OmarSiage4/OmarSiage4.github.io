@@ -1,0 +1,81 @@
+.progress{
+    height: 150px;
+    margin: 25px auto;
+    background-color: white;
+}
+
+.progress img{
+    width: 80px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 50%;
+  }
+  
+ul p{
+    margin-top: 20px;
+    font-weight: 600;
+    text-shadow: 0.5px 0.5px black;
+
+}
+
+ul{
+    margin: 0 auto;
+}
+
+
+ul li{
+    display: inline-block;
+    width: 200px;
+    position: relative;
+}
+
+
+ul li i{
+    width: 16px;
+    height: 15px;
+}
+
+
+ul li i::after{
+    content: '';
+    background-color: #ccc;
+    height: 5px;
+    width: 205px;
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 145px;
+}
+
+
+
+
+
+ul li:nth-child(1) i::after{
+    background-color:green;
+}
+
+
+
+ul li:last-child i::after{
+    width: 165px;
+}
+
+
+
+ul li:nth-child(3) i::after{
+    background-color:#ffff00;
+}
+
+
+ul li:nth-child(2) i::after{
+    background-color:green;
+}
+
+
+
+h1{
+    text-align: center;
+    margin:40px 0;
+}
+

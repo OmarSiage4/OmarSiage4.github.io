@@ -28,7 +28,6 @@ footer{
   color: white;
   font-style: oblique;
 
-
 }
 
 /* This will allow me to center the button in the middle */
@@ -61,43 +60,8 @@ footer{
 }
 
 
-/*  STYLE FOR THE CLIENT */
-#clientBody{
-  display: flex;
-  height: 84vh;
-  background-color: lightpink;
-}
 
 
-
-#clientInfoForm{
-  background-color: pink;
-  width: 25%;
-  margin: auto auto;
-
-  min-height: 450px;
-  max-height: 550px;
-  border: 1px solid black;
-  border-radius: 4px;
-  min-width: 375px;
-  height: 25vh;
-  padding: 20px;
-  text-align: center;
-}
-
-#personalInfo{
-  border: 1px solid black;
-  width: 85%;
-  margin: auto;
-  margin-top: 45px;
-  padding: 20px;
-
-  font-family: 'Courier New', Courier, monospace;
-}
-
-#customerInfo{
-  font-weight: 700;
-}
 
 #submitButton{
   padding: 5px;
@@ -111,3 +75,80 @@ footer{
 #submitButton:hover{
   background-color: black;
 }
+
+
+
+.nav-buttons{
+  display: block;
+  text-align: center;
+  padding: 3;
+}
+
+
+.nav-buttons button{
+  margin: 0 150px;
+  padding: 15px;
+  border: 1px solid black;
+  border-radius: 25%;
+  font-weight: 500;
+  
+}
+
+
+
+
+/*STYLE FOR THE CATEGORIES */
+
+.cetegories{
+  background-color: #f3f3f3;
+  padding: 50px;
+  margin-top: 40px;
+  text-align: center;
+  display: block;
+
+  border: 1px solid black;
+}
+
+
+.cetegories div{
+  border: 1px solid black;
+  padding: 35px;
+  width: 25%;
+  height: 100;
+  margin: 25px auto;
+  padding: 35px;
+  line-height: 75px;
+
+  font-size: 30px;
+  font-weight: 600;
+
+  min-width: 365px;
+
+}
+
+
+#veggyandfruit{
+  background-color: #86ff4a;
+}
+
+
+#bakery{
+  background-color: #fffc5c;
+}
+
+
+#dairyandmeat{
+  background-color: #c7525a;
+}
+
+#snacks {
+  background: #73cfca;
+}
+
+
+
+#spices{
+  background: #cc681c;
+
+}
+
