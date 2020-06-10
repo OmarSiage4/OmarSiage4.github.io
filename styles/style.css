@@ -152,3 +152,33 @@ footer{
 
 }
 
+
+
+#spices:hover{
+  background-color:darkorange;
+  color:white;
+}
+
+
+#snacks:hover{
+  background-color: darkblue;
+  color: white;;
+}
+
+
+#dairyandmeat:hover{
+  background-color: red;
+  color: white;
+}
+
+
+#bakery:hover{
+  background-color: yellow;
+  color:blue;
+}
+
+
+#veggyandfruit:hover{
+  background-color: darkgreen;
+  color: white;
+}
