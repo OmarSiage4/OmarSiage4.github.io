@@ -11,7 +11,7 @@ function transferData(){
 
 
 
-	var priceSort = document.getElementById("organicYes").checked
+	var priceSort = document.getElementById("priceSortYes").checked
 	if(priceSort){
 		priceSort = "true";
 	}
