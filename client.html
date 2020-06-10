@@ -60,8 +60,10 @@
       </div>
           
       <div id="personalInfo">
+
           <label for="customerCategory">Select Perfered Diet :</label>
           <select name="customerCategory" id="customerCategory" multi>
+
           <option value="Vegetarian">Vegetarian</option>
           <option value="GlutenFree">Gluten Free</option>
           <option value="both">Vegetarian & Gluten Free</option>
@@ -70,14 +72,14 @@
 
       <br>
 
-      <input type="checkbox" id="organic" name="organic">
+      <input type="radio" id="organic" name="organic">
       <label for="organic">Organic? </label>
       
       <br>
 
-      <input type="checkbox" id="priceSort" name="priceSort">
+      <input type="radio" id="priceSort" name="priceSort">
       <label for="priceSort">Sort Prices? </label>
-    </div>
+      </div>
       <button id=submitButton onclick="transferData()">Submit</button> 
     </div>
 

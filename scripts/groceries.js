@@ -29,12 +29,30 @@ var products = [
 		category:"bakery"
 	},
 	{
+		name: "Organic Bread",
+		vegetarian: true,
+		glutenFree: false,
+		price: 3.35,
+		url : "https://img.icons8.com/doodle/48/000000/bread--v1.png",
+		organic:true,
+		category:"bakery"
+	},
+	{
+		name: "Organic Milk",
+		vegetarian: true,
+		glutenFree: true,
+		price: 2.35,
+		url :"https://img.icons8.com/cotton/48/000000/milk-bottle--v1.png",
+		organic:true,
+		category:"dairyandmeat"
+	},
+	{
 		name: "Salmon",
 		vegetarian: false,
 		glutenFree: true,
 		price: 10.99,
 		url : "https://img.icons8.com/cotton/48/000000/salmon--v1.png",
-		organic: false,
+		organic: true,
 		category: "dairyandmeat"
 	},
 	{
@@ -52,7 +70,7 @@ var products = [
 		glutenFree: true,
 		price: 6.99,
 		url : "https://img.icons8.com/color/48/000000/curry.png",
-		organic: false,
+		organic: true,
 		category:"spices"
 	},
 	{
@@ -235,7 +253,7 @@ function displayProducts(productList){
 		productList = sortCost(productList);
 	}
 	
-	
+
 	let div = document.getElementById("productList");
 	console.log(div)
 	div.innerHTML = " "; 
